@@ -1,0 +1,6 @@
+<div>
+    <div [@fadeOut] *ngIf="active$ | async">
+        <app-spinner></app-spinner>
+    </div>
+    <ng-content></ng-content>
+</div>

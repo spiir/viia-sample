@@ -1,0 +1,181 @@
+/* You can add global styles to this file, and also import other style files */
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$app-primary: mat-palette($mat-indigo);
+$app-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$app-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($app-theme);
+
+@import './theme';
+@import './fonts';
+@import './variables';
+@import './mixins';
+
+$custom-typography: mat-typography-config(
+  $font-family: (
+    'Galano-Grotesque',
+    Futura,
+    Arial,
+    sans-serif,
+  ),
+  $body-1: mat-typography-level(12px, 16px, 500),
+  $body-2:
+    mat-typography-level(
+      12px,
+      16px,
+      500,
+      ('Galano-Grotesque-Semibold', Futura, Arial, sans-serif)
+    ),
+  $display-4:
+    mat-typography-level(
+      1.5rem,
+      2rem,
+      500,
+      ('Galano-Grotesque-Semibold', Futura, Arial, sans-serif)
+    ),
+  $button:
+    mat-typography-level(
+      14px,
+      16px,
+      600,
+      ('Galano-Grotesque', Futura, Arial, sans-serif)
+    ),
+  $title:
+    mat-typography-level(
+      14px,
+      16px,
+      600,
+      ('Galano-Grotesque-Semibold', Futura, Arial, sans-serif)
+    ),
+  $subheading-1:
+    mat-typography-level(
+      14px,
+      16px,
+      500,
+      ('Galano-Grotesque', Futura, Arial, sans-serif)
+    ),
+  $subheading-2:
+    mat-typography-level(
+      16px,
+      19px,
+      500,
+      ('Galano-Grotesque', Futura, Arial, sans-serif)
+    ),
+  $headline:
+    mat-typography-level(
+      26px,
+      30px,
+      600,
+      ('Galano-Grotesque-Semibold', Futura, Arial, sans-serif)
+    ),
+);
+
+@include mat-core($custom-typography);
+
+html,
+body {
+  height: 100%;
+
+  @media (max-width: $small-devices-width) {
+    font-size: 13.333px;
+  }
+}
+
+body {
+  background-color: #f6f6f9;
+}
+
+.content-padding {
+  @include contentPadding();
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+input {
+  &.form-control {
+    &.viia-input-field {
+      height: 44px;
+      font-size: 12px;
+      background-color: $off-white;
+      border-radius: 6px;
+      &:focus {
+        border-color: $blue;
+        border-width: 2px;
+        box-shadow: none;
+      }
+      &.is-invalid {
+        background-color: $white;
+        border-color: $neon-red;
+        border-top: 2px solid $neon-red;
+        border-left: 2px solid $neon-red;
+        border-right: 2px solid $neon-red;
+        border-bottom: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+        & ~ .invalid-feedback {
+          display: flex;
+          align-items: center;
+          color: $black;
+          background-color: rgba(255, 0, 65, 0.2);
+          font-size: 100%;
+          font-weight: 400;
+          line-height: 1.5;
+          height: 44px;
+          padding: 0.375rem 0.75rem;
+          margin-top: 0;
+          border-color: $neon-red;
+          border-bottom: 2px solid $neon-red;
+          border-left: 2px solid $neon-red;
+          border-right: 2px solid $neon-red;
+          border-top: 0;
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
+          border-bottom-left-radius: 6px;
+          border-bottom-right-radius: 6px;
+        }
+      }
+    }
+  }
+}
+
+/* a {
+  &.mat-flat-button {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &.mat-stroked-button {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+ */

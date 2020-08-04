@@ -22,7 +22,7 @@
     "@angular/platform-browser-dynamic": "10.0.7",
     "@angular/platform-server": "10.0.7",
     "@angular/router": "10.0.7",
-    "angular-material": "^1.2.0",
+    "@angular/material": "10.1.1",
     "aspnet-prerendering": "^3.0.1",
     "core-js": "^3.6.5",
     "rxjs": "^6.6.2",

@@ -1,0 +1,37 @@
+@mixin page {
+  viia-page {
+    &.fade-in {
+      opacity: 0;
+    }
+  }
+  @media (min-width: $desktop-breakpoint) {
+    :host {
+      max-height: $max-desktop-height;
+      max-width: $desktop-width;
+      width: 100%;
+    }
+  }
+}
+
+@mixin hideEmpty {
+  &:empty {
+    display: none;
+  }
+}
+
+// TODO: Delete unused
+@mixin desktopDimensions {
+  max-height: $max-desktop-height;
+  width: $desktop-width;
+}
+
+@mixin contentPadding {
+  padding: 3rem 2rem;
+}
+
+@mixin bgEdgeX {
+  margin-left: -#{2rem};
+  padding-left: 2rem;
+  margin-right: -#{2rem};
+  padding-right: 2rem;
+}

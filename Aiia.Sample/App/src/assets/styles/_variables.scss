@@ -1,0 +1,46 @@
+@import '~@angular/material/theming';
+@import './fonts';
+@import './palette';
+
+// Base variables (only for local use in this file)
+$base-spacing: 1rem;
+//palettes
+$app-primary: mat-palette($app-blue, 700);
+$app-accent: mat-palette($app-green);
+$app-warn: mat-palette($mat-red);
+$app-grey: mat-palette($app-grey);
+
+// Colors
+$notify-yellow: #ffd400;
+$notify-yellow-light: #fff4bf;
+$neon-red: #ff0041;
+$brown-grey: #9e9e9e;
+$off-white: #f5f5f5;
+$white: #ffffff;
+$black: #000000;
+$blue: #0000ff;
+$gray-240: rgb(240, 240, 240);
+
+// Spacing
+$content-top-padding: 27px;
+$gradient-height: 30px;
+$accounts-group-bottom-margin: 24px;
+
+$page-padding-side: 30px;
+$page-padding-top: 18px;
+$desktop-breakpoint: 701px;
+$max-desktop-height: 600px;
+$min-desktop-height: 600px;
+$desktop-width: 400px;
+$small-devices-width: 321px;
+$padding-x: 2rem;
+$padding-y: 3rem;
+
+$btn-height: 17px;
+$header-margin: 16px;
+
+$primary-color: $blue;
+$disabled-color: #9e9e9e;
+
+// Shapes
+$button-radius: 25px;

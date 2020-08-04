@@ -1,0 +1,30 @@
+@import '~@angular/material/theming';
+@import './variables';
+
+$custom-typography: mat-typography-config(
+  $font-family: 'Galano-Grotesque',
+  $body-1: mat-typography-level(16px, 24px, 500),
+);
+
+@include mat-core($custom-typography);
+
+$app-foreground: (
+  base: $black,
+);
+
+$app-background: (
+  background: map_get($app-grey, 50),
+);
+
+$app-theme: map-merge(
+  mat-light-theme($app-primary, $app-accent, $app-warn),
+  (
+    foreground: $app-foreground,
+    background: $app-background,
+  )
+);
+@include angular-material-theme($app-theme);
+
+@import './material-components-themes/mat-button-theme';
+@import './material-components-themes/mat-chips-theme';
+@import './material-components-themes/mat-table-theme';

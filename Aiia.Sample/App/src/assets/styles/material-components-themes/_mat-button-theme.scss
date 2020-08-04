@@ -1,0 +1,54 @@
+@import '~@angular/material/theming';
+
+$app-button-theme: mat-light-theme(
+  $app-primary,
+  mat-palette($app-grey),
+  $app-warn
+);
+@include mat-button-theme($app-button-theme);
+
+.mat-button,
+.mat-stroked-button,
+.mat-flat-button {
+  border-radius: $button-radius !important;
+  border-width: 2px !important;
+  padding: 0 25px !important;
+  line-height: 44px !important;
+}
+
+.mat-stroked-button,
+.mat-flat-button {
+  &:focus {
+    outline: none !important;
+    border-radius: $button-radius !important;
+    box-shadow: 0 0 3pt 2pt rgba(0, 0, 255, 0.2);
+  }
+}
+
+.mat-stroked-button {
+  border-width: 2px !important;
+}
+
+.mat-button {
+  font-family: 'Galano-Grotesque-SemiBold', Futura, Arial, sans-serif !important;
+  background: $white;
+  &:hover {
+    & .mat-button-focus-overlay {
+      background-color: transparent;
+    }
+  }
+  &:focus {
+    outline: none !important;
+  }
+  & .mat-button-ripple {
+    &.mat-ripple {
+      display: none;
+    }
+  }
+}
+
+.mat-button-wrapper {
+  &:focus {
+    outline: none !important;
+  }
+}

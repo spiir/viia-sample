@@ -1,0 +1,98 @@
+@import 'styles/variables';
+
+$spinner-size: 48;
+$spinner-transform-scale: $spinner-size * 0.01;
+$spinner-size-px: $spinner-size + 0px;
+
+.spinner-overlay,
+.spinner-container {
+  height: 100%;
+  width: 100%;
+
+  @media (min-width: $desktop-breakpoint) {
+    border-radius: 0.5rem;
+  }
+}
+
+.spinner-overlay {
+  left: 0;
+  position: absolute;
+  top: 0;
+  overflow-y: hidden;
+  z-index: 20;
+}
+
+.spinner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  position: absolute;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner > div {
+  animation: spinner 1s infinite linear;
+  transform-origin: 50px 50px;
+}
+
+.spinner > div div {
+  position: absolute;
+}
+
+.spinner > div div:nth-child(1),
+.spinner > div div:nth-child(2) {
+  width: 73px;
+  height: 73px;
+  border: 6px solid;
+  border-radius: 50%;
+  border-color: transparent #000000 #000000 #000000;
+  box-sizing: border-box;
+  position: absolute;
+  transform: rotate(45deg);
+  transform-origin: 50px 50px;
+}
+
+.spinner > div div:nth-child(1) {
+  transform: rotate(45deg) translate(13.5px, 13.5px);
+}
+
+.spinner > div div:nth-child(2) {
+  transform: rotate(-9deg) translate(13.5px, 13.5px);
+}
+
+.spinner > div div:nth-child(3) {
+  width: 0;
+  height: 0;
+  border: 0px solid;
+  border-color: transparent transparent transparent #000000;
+  transform: translate(50px, 13.5px);
+}
+
+.spinner-sub-container {
+  width: $spinner-size-px;
+  height: $spinner-size-px;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.spinner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale($spinner-transform-scale);
+  backface-visibility: hidden;
+  transform-origin: 0 0;
+}
+
+.spinner div {
+  box-sizing: content-box;
+}
