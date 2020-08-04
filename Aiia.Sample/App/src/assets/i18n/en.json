@@ -1,0 +1,60 @@
+{
+    "HOME": {
+      "HEADER": {
+        "NAVIGATION": {
+          "FOR_BUSINESSES": "For businesses",
+          "SIGN_IN": "Sign in",
+          "CREATE_ACCOUNT": "Create account"
+        },
+        "VIIA_HUB": {
+          "TITLE": "Complete overview and control",
+          "DESCRIPTION": "In the Viia hub you have the complete overview of which bank accounts you have connected, who do you have shared it with, and how they use it. You can always go in an revoke/give access and add/remove bank accounts."
+        },
+        "VIIA_PAY": {
+          "TITLE": "Payments where you need it",
+          "DESCRIPTION": "Wether you are shopping for shoes or paying invoices directly from you accounting software Viia pay is there."
+        }
+      },
+      "BANNER": {
+        "MAIN_TEXT": "Unlock the true value of your",
+        "FINANCIAL": "financial",
+        "DATA": "data",
+        "SUBTEXT": "Be in full control with Viia"
+      },
+      "PARTNERS": {
+        "TITLE": "Trusted by the best",
+        "BODY": "We’ve partnered with leading-edge companies across Europe to allow you to automate your workflows and save time by connecting your financial data to the services you love."
+      },
+      "USP": {
+        "PROPOSITION": {
+          "SHARE": {
+            "TITLE": "Share your financial data with services you love",
+            "BODY": "Tired of exporting and importing files from the bank to your accounting system? Automate your workflow with Viia. Looking to lend? Get the most accurate credit score by sharing your data in seconds."
+          },
+          "CONTROL": {
+            "TITLE": "You are in full control of your data",
+            "BODY": "With Viia you stay in full control by always having an accurate, up-to-date overview of which accounts you have shared with whom.  You also have the option to add or remove accounts and revoke shared data from a service."
+          },
+          "PAYMENTS": {
+            "PILL": "Coming soon",
+            "TITLE": "Frictionless and secure payments with Viia",
+            "BODY": "Whether you are shopping for shoes or paying invoices directly from you accounting software Viia pay is there."
+          }
+        }
+      },
+      "CLOSING_USP": {
+        "TITLE": "Viia for businesses",
+        "BODY": "Built on trust and transparency, Viia provides financial access for businesses, so your customers can share more with the services they love - like yours!",
+        "ACTION": "Learn more"
+      }
+    },
+    "FOOTER": {
+      "LICENSE": "Viia is a product of Spiir A/S which is a licensed Account Information Service Provider (AISP) and Payment Initiation Service Provider (PISP). We operate under the supervision of the Danish Financial Services Authority (FSA).",
+      "COPYRIGHT": "© 2019 Spiir A/S",
+      "LINK": {
+        "PRIVACY": "Privacy policy",
+        "TERMS": "Terms of use",
+        "SUPPORT": "Support"
+      }
+    }
+  }

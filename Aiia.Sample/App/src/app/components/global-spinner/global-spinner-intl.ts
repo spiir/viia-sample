@@ -11,8 +11,8 @@ export class GlobalSpinnerService {
 
   public readonly active$ = combineLatest([
     this.active,
-    this.tracker.pipe(map((arr) => !!arr.length)),
-  ]).pipe(map((arr) => !arr.filter((v) => !v).length));
+    this.tracker.pipe((map((arr: any[]) => !!arr.length)) as any),
+  ]).pipe((map((arr: any[]) => !arr.filter((v) => !v).length)) as any);
 
   public disableUntil(input: Observable<any>): void {
     this.active.next(false);

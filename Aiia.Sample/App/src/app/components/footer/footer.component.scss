@@ -1,0 +1,99 @@
+@import 'src/assets/styles/_variables.scss';
+:host {
+  display: flex;
+  justify-content: center;
+  background-color: $black;
+}
+.footer {
+  width: 100%;
+  margin: 48px;
+  @media only screen and (max-width: 580px) {
+    margin: 48px 24px;
+  }
+  @media only screen and (min-width: $desktop-width) {
+    margin: 48px 0px;
+    max-width: $desktop-width;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    color: $white;
+    &__top {
+      @media only screen and (min-width: $desktop-width) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      margin-bottom: 48px;
+      &__logo {
+        text-align: left;
+        font-family: 'Galano-Grotesque-SemiBold', 'Roboto', 'Helvetica Neue',
+          Arial, sans-serif;
+        margin-bottom: 48px;
+      }
+      &__links-area {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        @media only screen and (min-width: $desktop-width) {
+          width: 30%;
+        }
+        @media only screen and (min-width: 580px) and (max-width: $desktop-width) {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          max-width: 400px;
+        }
+        &__links {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          &__item {
+            font-size: 12px;
+            & a {
+              text-decoration: underline;
+            }
+          }
+        }
+        &__social {
+          display: flex;
+          flex-direction: row;
+          &__item {
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+    &__bottom {
+      @media only screen and (min-width: $desktop-width) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      &__license {
+        text-align: left;
+        max-width: 400px;
+        margin-bottom: 48px;
+        font-size: 12px;
+        line-height: 18px;
+        @media only screen and (max-width: 580px) {
+          max-width: 100%;
+        }
+        @media only screen and (min-width: $desktop-width) {
+          display: flex;
+          margin-bottom: 0;
+        }
+      }
+      &__copyright {
+        @media only screen and (min-width: $desktop-width) {
+          width: 30%;
+          align-items: flex-end;
+        }
+        font-size: 12px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+      }
+    }
+  }
+}

@@ -5,12 +5,14 @@
             true,
             "attribute",
             "app",
+            "aiia",
             "camelCase"
         ],
         "component-selector": [
             true,
             "element",
             "app",
+            "aiia",
             "kebab-case"
         ]
     }
