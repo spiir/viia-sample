@@ -13,6 +13,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "10.0.7",
+    "@angular/cdk": "^10.1.2",
     "@angular/common": "10.0.7",
     "@angular/compiler": "10.0.7",
     "@angular/core": "10.0.7",
@@ -21,6 +22,7 @@
     "@angular/platform-browser-dynamic": "10.0.7",
     "@angular/platform-server": "10.0.7",
     "@angular/router": "10.0.7",
+    "angular-material": "^1.2.0",
     "aspnet-prerendering": "^3.0.1",
     "core-js": "^3.6.5",
     "rxjs": "^6.6.2",
