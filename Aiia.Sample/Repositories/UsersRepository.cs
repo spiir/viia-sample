@@ -15,7 +15,7 @@ namespace Aiia.Sample.Repositories
         private const int DEFAULT_CACHE_TIME_IN_MILLIS_SECONDS = 1000 * 60 * 5;
         private readonly IDistributedCache _cache;
         private readonly OptionsMonitor<SampleOptions> _options;
-        private static string Table => "Users";
+        private static string Table => "users";
         private IDbConnection Connection => new SqlConnection(_options.CurrentValue.ConnectionStrings.Main);
 
         public UsersRepository(OptionsMonitor<SampleOptions> options, IDistributedCache cache)
@@ -24,18 +24,31 @@ namespace Aiia.Sample.Repositories
             _cache = cache ?? throw new ArgumentNullException(nameof(cache));
         }
 
+        public async Task Create(string email, string passwordHash)
+        {
+            var query = $"INSERT INTO {Table} (Id, Email, PasswordHash) VALUES(@id, @email, @passwordHash)";
+            using var conn = Connection;
+            await conn.ExecuteAsync(query,
+                                    new
+                                    {
+                                        id = Guid.NewGuid(),
+                                        email,
+                                        passwordHash
+                                    });
+        }
+
         public async Task<User> GetByEmail(string email)
         {
             var cache = await _cache.GetObjectAsync<User>(email);
             if (cache != null)
                 return cache;
 
-            var query = $"SELECT * FROM {Table} WHERE UserName = @email";
+            var query = $"SELECT * FROM {Table} WHERE Email = @email";
             using var conn = Connection;
             var user = await conn.QueryFirstOrDefaultAsync<User>(query,
                                                                  new
                                                                  {
-                                                                     userName = email
+                                                                     email
                                                                  });
             await _cache.SetObjectAsync(email,
                                         user,
@@ -63,6 +76,7 @@ namespace Aiia.Sample.Repositories
 
     public interface IUsersRepository
     {
+        Task Create(string email, string passwordHash);
         Task<User> GetByEmail(string email);
         Task<User> GetById(string id);
     }
